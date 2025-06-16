@@ -13,11 +13,11 @@ export default function Hero() {
       </div>
 
       {/* Hero Content */}
-      <div className="relative flex flex-col md:flex-row items-center justify-between px-6 md:px-24 w-full z-10">
+      <div className="relative flex flex-col md:flex-row items-center justify-between px-6 md:px-24 w-full z-10 gap-10">
         {/* Text */}
         <div className="flex flex-col justify-center space-y-4 max-w-lg text-center md:text-left">
           <p className="text-lg text-[#5A3E85] font-medium">Discover</p>
-          <h1 className="text-4xl md:text-5xl font-bold text-gray-800 leading-tight">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-800 leading-tight">
             <Typewriter
               words={["Perfect pick for you", "Exclusive trends", "Timeless elegance"]}
               loop={0}
@@ -28,7 +28,7 @@ export default function Hero() {
               delaySpeed={1000}
             />
           </h1>
-          <p className="text-base md:text-lg text-gray-600">
+          <p className="text-sm sm:text-base md:text-lg text-gray-600">
             1000+ timeless pieces made to sparkle your daily life. Curated collections. Gift-worthy. You deserve this.
           </p>
           <a
@@ -40,7 +40,7 @@ export default function Hero() {
         </div>
 
         {/* Image */}
-        <div className="relative w-[40%] h-[45vh] hidden md:block">
+        <div className="relative w-full md:w-[40%] h-[30vh] md:h-[45vh]">
           <Image
             src="/hero.png"
             alt="Hero Jewellery"

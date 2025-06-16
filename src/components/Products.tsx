@@ -35,7 +35,7 @@ export default function FeaturedProducts() {
             key={item.id}
             className="bg-white rounded-xl shadow hover:shadow-lg transition-shadow duration-300"
           >
-            <div className="relative w-full h-64">
+            <div className="relative w-full h-60 sm:h-64">
               <Image src={item.image} alt={item.name} fill className="object-cover rounded-t-xl" />
             </div>
             <div className="p-4 text-center">
