@@ -12,7 +12,7 @@ const featuredItems = [
   {
     id: 2,
     name: 'Golden Chain Necklace',
-    price: '₹52,499',
+    price: '51,499',
     image: '/hero.png',
   },
   {
