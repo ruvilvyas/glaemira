@@ -13,7 +13,7 @@ import {
 
 export default function Footer() {
   return (
-    <footer className="bg-[#f8f6f2] text-[#333] px-4 py-10 md:px-20 text-sm">
+    <footer className="bg-[#f8f6f2] border-t text-[#333] px-4 py-10 md:px-20 text-sm">
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
         {/* Logo + Newsletter */}
         <div className="col-span-1 sm:col-span-2 md:col-span-1">

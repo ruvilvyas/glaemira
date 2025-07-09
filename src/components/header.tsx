@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { Heart, ShoppingCart, User, Menu, X } from "lucide-react";
+import { useCart } from "./CartContext";
 
 const categories = [
   { name: "All Jewellery", href: "/jewellery" },
@@ -15,6 +16,9 @@ const categories = [
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
+   const { cart } = useCart();
+  const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
+
 
   return (
     <>
@@ -51,9 +55,14 @@ export default function Header() {
             <Link href="/wishlist" className="text-purple-700 hover:text-purple-900">
               <Heart size={22} />
             </Link>
-            <Link href="/cart" className="text-purple-700 hover:text-purple-900">
-              <ShoppingCart size={22} />
-            </Link>
+            <Link href="/cart" className="relative text-purple-700 hover:text-purple-900">
+      <ShoppingCart size={22} />
+      {totalItems > 0 && (
+        <span className="absolute -top-2 -right-2 bg-purple-600 text-white text-xs rounded-full px-1">
+          {totalItems}
+        </span>
+      )}
+    </Link>
             <Link href="/profile" className="text-purple-700 hover:text-purple-900">
               <User size={22} />
             </Link>
