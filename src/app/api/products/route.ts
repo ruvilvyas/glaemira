@@ -9,8 +9,11 @@ export async function GET(req: NextRequest) {
     const limit = req.nextUrl.searchParams.get("limit") || "6";
     const products = await Product.find().limit(parseInt(limit));
     return NextResponse.json(products);
-  } catch (error) {
-    return NextResponse.json({ error: "Failed to fetch products" }, { status: 500 });
+  } catch {
+    return NextResponse.json(
+      { error: "Failed to fetch products" },
+      { status: 500 }
+    );
   }
 }
 
@@ -26,7 +29,10 @@ export async function POST(req: NextRequest) {
 
     const newProduct = await Product.create({ name, price, image });
     return NextResponse.json(newProduct, { status: 201 });
- } catch {
-  return NextResponse.json({ error: "Failed to create Project" }, { status: 500 });
-}
+  } catch {
+    return NextResponse.json(
+      { error: "Failed to create product" },
+      { status: 500 }
+    );
+  }
 }

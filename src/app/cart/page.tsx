@@ -21,7 +21,7 @@ export default function CartPage() {
 
         {cart.length === 0 ? (
           <p className="text-gray-500 text-lg text-center mt-20">
-            Your cart is empty. Let's go shopping!
+            Your cart is empty. Let&apos;s go shopping!
           </p>
         ) : (
           <>
