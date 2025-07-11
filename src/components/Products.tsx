@@ -23,10 +23,10 @@ export default function FeaturedProducts() {
         if (!res.ok) throw new Error("Failed to fetch products");
         const data = await res.json();
         setProducts(data);
-      } catch (err: any) {
-        setError(err.message || "Something went wrong");
-        console.error("❌ Error fetching products:", err);
-      } finally {
+      }  catch (err) {
+  if (err instanceof Error) setError(err.message);
+  else setError("Something went wrong");
+} finally {
         setLoading(false);
       }
     };

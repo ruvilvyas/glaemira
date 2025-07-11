@@ -42,7 +42,7 @@ export default function ProductDetailsClient({ product }: Props) {
 
         <div className="bg-purple-100 border-l-4 border-[#5A3E85] text-sm p-4 rounded-lg">
           <p className="text-gray-900"><strong>🎁 B1G1:</strong> Buy 1 Get 1 Free — Add any 2 products to cart!</p>
-          <p className="mt-1 text-gray-800">Pay online and get a <strong>'Unisex Evil Eye Bracelet'</strong> worth ₹399/- free + ₹250 Off 💝</p>
+          <p className="mt-1 text-gray-800">Pay online and get a <strong>&apos;Unisex Evil Eye Bracelet&apos;</strong> worth ₹399/- free + ₹250 Off 💝</p>
         </div>
 
         <label className="flex items-center space-x-3 mt-4">

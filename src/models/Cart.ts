@@ -1,5 +1,5 @@
 // models/Cart.ts
-import mongoose, { Schema, models, model } from "mongoose";
+import  { Schema, models, model } from "mongoose";
 
 const CartSchema = new Schema(
   {

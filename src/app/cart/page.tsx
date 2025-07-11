@@ -4,7 +4,7 @@ import { useCart } from "@/components/CartContext";
 import Image from "next/image";
 import { Trash2 } from "lucide-react";
 import Header from "@/components/header";
-
+import Link from "next/link";
 export default function CartPage() {
   const { cart, updateQuantity, removeFromCart } = useCart();
 
@@ -14,12 +14,9 @@ export default function CartPage() {
       <div className="max-w-6xl bg-white mx-auto px-4 py-10">
         <div className="flex justify-between items-center mb-8">
           <h1 className="text-4xl font-bold text-[#2f1e4f]">Your cart</h1>
-          <a
-            href="/"
-            className="text-[#a585e3] underline text-sm hover:text-[#7e5dc9]"
-          >
-            Continue shopping
-          </a>
+         <Link href="/" className="text-[#a585e3] underline text-sm hover:text-[#7e5dc9]">
+  Continue shopping
+</Link>
         </div>
 
         {cart.length === 0 ? (

@@ -12,8 +12,9 @@ export async function POST(req: Request) {
   if (!cart) {
     cart = await Cart.create({ userId, items: [item] });
   } else {
-    const existingItem = cart.items.find((i: any) => i.productId.equals(item.productId));
-
+const existingItem = cart.items.find((i: { productId: string; quantity: number }) =>
+  i.productId === item.productId
+);
     if (existingItem) {
       existingItem.quantity += item.quantity;
     } else {
