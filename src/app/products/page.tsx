@@ -1,25 +1,43 @@
 // components/CollectionsGrid.tsx
-import React from "react";
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
 
-type CategoryType = {
-  _id: string;
-  name: string;
-  slug: string;
-  image: string;
-};
+const categories = [
+  {
+    _id: "1",
+    name: "Necklaces",
+    slug: "necklaces",
+    image: "/neckles.png",
+  },
+  {
+    _id: "2",
+    name: "Rings",
+    slug: "rings",
+    image: "/ring.png",
+  },
+  {
+    _id: "3",
+    name: "Bracelets",
+    slug: "bracelets",
+    image: "/bracelet.png",
+  },
+  {
+    _id: "4",
+    name: "Earrings",
+    slug: "earrings",
+    image: "/ring.png",
+  },
+  {
+    _id: "5",
+    name: "dress",
+    slug: "anklets",
+    image: "/kurti.png",
+  },
+];
 
-export default async function CollectionsGrid() {
-  const baseUrl =
-    process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000";
-
-  const res = await fetch(`${baseUrl}/api/categories`, {
-    cache: "no-store",
-  });
-
-  const categories: CategoryType[] = await res.json();
-
+export default function CollectionsGrid() {
   return (
     <section className="bg-white py-12 px-4 md:px-24">
       <h2 className="text-2xl md:text-4xl font-semibold text-center text-gray-800 mb-6">

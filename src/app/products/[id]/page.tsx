@@ -5,11 +5,11 @@ import ProductDetailsClient from "@/components/ProductDetailsClient";
 import Header from "@/components/header";
 
 type Props = {
-  params: { id: string };
+  params: Promise<{ id: string }>;
 };
 
 export default async function ProductPage({ params }: Props) {
-  const productId = params.id;
+  const { id: productId } = await params;
 
   await connectDB();
 
