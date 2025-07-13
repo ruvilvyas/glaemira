@@ -5,6 +5,7 @@ import Footer from "@/components/Footer";
 import WhatsAppChat from "@/components/WhatsAppChat";
 import { CartProvider } from "@/components/CartContext";
 
+
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],

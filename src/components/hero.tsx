@@ -1,7 +1,6 @@
 "use client";
 import { Typewriter } from "react-simple-typewriter";
 import Image from "next/image";
-
 export default function Hero() {
   return (
     <div className="relative bg-[#FDF9F3] overflow-hidden pt-10 pb-14 sm:pt-12 sm:pb-20 md:min-h-[80vh] flex items-center justify-center">
@@ -31,12 +30,13 @@ export default function Hero() {
           <p className="text-sm sm:text-base md:text-lg text-gray-600 max-w-md">
             1000+ timeless pieces made to sparkle your daily life. Curated collections. Gift-worthy. You deserve this.
           </p>
-          <a
-            href="/collections"
-            className="inline-block mt-3 px-5 py-2.5 bg-[#5A3E85] text-white rounded-lg font-semibold hover:bg-[#452c68] transition"
-          >
-            Shop Now
-          </a>
+   <a
+  href="#featured-products"
+  className="inline-block mt-3 px-5 py-2.5 bg-[#5A3E85] text-white rounded-lg font-semibold hover:bg-[#452c68] transition"
+>
+  Shop Now
+</a>
+
         </div>
 
         {/* Image */}

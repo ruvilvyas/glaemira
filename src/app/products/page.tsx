@@ -14,25 +14,25 @@ const categories = [
   {
     _id: "2",
     name: "Rings",
-    slug: "rings",
+    slug: "necklaces",
     image: "/ring.png",
   },
   {
     _id: "3",
     name: "Bracelets",
-    slug: "bracelets",
+    slug: "necklaces",
     image: "/bracelet.png",
   },
   {
     _id: "4",
     name: "Earrings",
-    slug: "earrings",
+    slug: "necklaces",
     image: "/ring.png",
   },
   {
     _id: "5",
     name: "dress",
-    slug: "anklets",
+    slug: "necklaces",
     image: "/kurti.png",
   },
 ];

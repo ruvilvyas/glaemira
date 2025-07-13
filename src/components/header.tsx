@@ -4,21 +4,30 @@ import Image from "next/image";
 import Link from "next/link";
 import { Heart, ShoppingCart, User, Menu, X } from "lucide-react";
 import { useCart } from "./CartContext";
+import { useRouter } from "next/navigation";
 
 const categories = [
-  { name: "All Jewellery", href: "/jewellery" },
-  { name: "Rings", href: "/rings" },
-  { name: "Daily Wear", href: "/daily-wear" },
-  { name: "Dress", href: "/dress" },
-  { name: "Collections", href: "/collections" },
-  { name: "Gifting", href: "/gifting" },
+  { name: "All Jewellery", href: "/headerlink" },
+  { name: "Rings", href: "/headerlink" },
+  { name: "Daily Wear", href: "/headerlink" },
+  { name: "Dress", href: "/headerlink" },
+  { name: "Collections", href: "/headerlink" },
+  { name: "Gifting", href: "/headerlink" },
 ];
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
    const { cart } = useCart();
   const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
-
+ const [searchQuery, setSearchQuery] = useState(""); // New state
+  const router = useRouter(); // Router hook
+  
+  const handleSearch = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    if (searchQuery.trim()) {
+      router.push(`/search?query=${encodeURIComponent(searchQuery.trim())}`);
+    }
+  };
 
   return (
     <>
@@ -41,14 +50,20 @@ export default function Header() {
           </Link>
 
           {/* Search Bar - Desktop Only */}
-          <form className="hidden md:flex items-center bg-white border border-gray-300 rounded-lg px-3 py-1 flex-1 mx-6 max-w-md">
-            <input
-              type="search"
-              placeholder="Search products"
-              className="outline-none w-full bg-transparent text-sm placeholder-gray-500"
-              aria-label="Search"
-            />
-          </form>
+        <form
+  onSubmit={handleSearch}
+  className="hidden md:flex items-center bg-white border border-gray-300 rounded-lg px-3 py-1 flex-1 mx-6 max-w-md"
+>
+  <input
+    type="search"
+    value={searchQuery}
+    onChange={(e) => setSearchQuery(e.target.value)}
+    placeholder="Search products"
+    className="outline-none w-full bg-transparent text-sm placeholder-gray-500"
+    aria-label="Search"
+  />
+</form>
+
 
           {/* Icons */}
           <div className="flex space-x-4 items-center">
@@ -62,22 +77,29 @@ export default function Header() {
           {totalItems}
         </span>
       )}
-    </Link>
-            <Link href="/profile" className="text-purple-700 hover:text-purple-900">
-              <User size={22} />
-            </Link>
+    </Link><Link href="/login" className="text-purple-700 hover:text-purple-900">
+  <User size={22} />
+</Link>
+
+
           </div>
         </div>
 
         {/* Mobile Search Bar */}
         <div className="md:hidden px-4 pb-3">
-          <form className="flex items-center bg-white border border-gray-300 rounded-lg px-3 py-2">
-            <input
-              type="search"
-              placeholder="Search for Gold Jewellery, Diamond Jewellery..."
-              className="outline-none w-full bg-transparent text-sm placeholder-gray-500"
-            />
-          </form>
+         <form
+  onSubmit={handleSearch}
+  className="flex items-center bg-white border border-gray-300 rounded-lg px-3 py-2"
+>
+  <input
+    type="search"
+    value={searchQuery}
+    onChange={(e) => setSearchQuery(e.target.value)}
+    placeholder="Search for Gold Jewellery, Diamond Jewellery..."
+    className="outline-none w-full bg-transparent text-sm placeholder-gray-500"
+  />
+</form>
+
         </div>
       </header>
 

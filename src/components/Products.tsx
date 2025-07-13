@@ -51,7 +51,7 @@ export default function FeaturedProducts() {
   }
 
   return (
-    <section className="bg-[#FDF9F3] py-16 px-6 md:px-24">
+    <section  id="featured-products" className="bg-[#FDF9F3] py-16 px-6 md:px-24">
       <h2 className="text-2xl md:text-4xl font-semibold text-center text-gray-800 mb-10">
         ✨ Featured Products
       </h2>

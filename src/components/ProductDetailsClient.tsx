@@ -3,6 +3,8 @@
 import Image from "next/image";
 import { useCart } from "@/components/CartContext";
 import toast, { Toaster } from "react-hot-toast";
+import CollectionsGrid from "@/app/products/page";
+import FeaturedProducts from "./Products";
 
 type Props = {
   product: {
@@ -23,6 +25,7 @@ export default function ProductDetailsClient({ product }: Props) {
   };
 
   return (
+    <>
     <div className="max-w-6xl mx-auto py-12 px-4 md:px-12 flex flex-col md:flex-row gap-12 items-start">
       <Toaster position="top-right" reverseOrder={false} />
 
@@ -57,10 +60,21 @@ export default function ProductDetailsClient({ product }: Props) {
           Add to Cart
         </button>
 
-        <button className="mt-6 w-full py-3 px-6 bg-white text-black text-lg font-medium rounded-md hover:bg-[#432b6a] transition">
-          Buy Now
-        </button>
+      <a
+  href="https://wa.me/919925931537?text=Hi%20Gleamira%2C%20I'm%20interested%20in%20your%20jewellery%20collections."
+  target="_blank"
+  rel="noopener noreferrer"
+>
+  <button className="mt-6 w-full py-3 px-6 bg-white text-black text-lg font-medium rounded-md hover:bg-[#432b6a] hover:text-white transition">
+    Buy Now
+  </button>
+</a>
+
       </div>
     </div>
+    
+    <CollectionsGrid />
+    <FeaturedProducts />
+    </>
   );
 }

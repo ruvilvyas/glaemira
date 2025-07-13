@@ -4,8 +4,8 @@ import Image from "next/image";
 
 const modelImages = [
   { name: "Look 1", img: "/shruti.jpg" },
-  { name: "Look 2", img: "/shruti.jpg" },
-  { name: "Look 3", img: "/shruti.jpg" },
+  { name: "Look 2", img: "/showcase1.jpg" },
+  { name: "Look 3", img: "/showcase3.jpg" },
 ];
 
 export default function Showcase() {
