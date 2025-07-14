@@ -5,6 +5,8 @@ import Image from "next/image";
 import { Trash2 } from "lucide-react";
 import Header from "@/components/header";
 import Link from "next/link";
+import CollectionsGrid from "@/components/collection";
+import FeaturedProducts from "@/components/Products";
 
 export default function CartPage() {
   const { cart, updateQuantity, removeFromCart } = useCart();
@@ -97,6 +99,8 @@ export default function CartPage() {
           </>
         )}
       </div>
+      <CollectionsGrid/>
+      <FeaturedProducts />
     </>
   );
 }
