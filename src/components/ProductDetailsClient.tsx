@@ -3,7 +3,7 @@
 import Image from "next/image";
 import { useCart } from "@/components/CartContext";
 import toast, { Toaster } from "react-hot-toast";
-import CollectionsGrid from "@/app/products/page";
+import CollectionsGrid from "@/components/collection";
 import FeaturedProducts from "./Products";
 
 type Props = {

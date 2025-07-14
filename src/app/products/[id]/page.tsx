@@ -21,7 +21,8 @@ export default async function ProductPage({ params }: Props) {
     }
 
     const serializedProduct = {
-      ...product,
+      ...product, 
+      
       _id: product._id?.toString?.() || "",
       name: product.name || "",
       slug: product.slug || "",

@@ -1,6 +1,6 @@
 import Hero from '@/components/hero'
 import React from 'react'
-import CollectionsGrid from './products/page'
+import CollectionsGrid from "@/components/collection";
 import FeaturedProducts from '@/components/Products'
 import ServiceIconsStrip from '@/components/ServiceIconsStrip'
 import Showcase from '@/components/Showcase'
