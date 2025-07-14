@@ -1,7 +1,7 @@
 // src/app/api/categories/route.ts
 import { NextResponse } from "next/server";
 import connectDB from "@/lib/db";
-import {Category} from "@/models/Category";
+import { Category } from "@/models/Category";
 
 export async function GET() {
   try {
@@ -9,9 +9,12 @@ export async function GET() {
     const categories = await Category.find();
     return NextResponse.json(categories);
   } catch (error) {
+    console.error("GET /api/categories error:", error); // ✅ used here
     return NextResponse.json({ message: "Failed to fetch categories" }, { status: 500 });
   }
-}export async function POST(req: Request) {
+}
+
+export async function POST(req: Request) {
   await connectDB();
 
   try {
