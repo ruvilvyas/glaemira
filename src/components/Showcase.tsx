@@ -22,7 +22,7 @@ export default function Showcase() {
 
       scrollContainer.scrollTo({ left: scrollAmount, behavior: "smooth" });
       setCurrentIndex(nextIndex);
-    }, 4000); // change every 4 seconds
+    }, 2000); // change every 4 seconds
 
     return () => clearInterval(interval);
   }, [currentIndex]);

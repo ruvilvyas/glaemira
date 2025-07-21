@@ -4,6 +4,7 @@ import "./globals.css";
 import Footer from "@/components/Footer";
 import WhatsAppChat from "@/components/WhatsAppChat";
 import { CartProvider } from "@/components/CartContext";
+import { AuthProvider } from "../context/auth-context";
 
 
 const geistSans = Geist({
@@ -41,9 +42,11 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
+        <AuthProvider>
         <CartProvider>
         {children}
         </CartProvider>
+        </AuthProvider>
         <WhatsAppChat />
         <Footer />
       </body>

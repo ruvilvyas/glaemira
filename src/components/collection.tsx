@@ -60,7 +60,7 @@ export default function CollectionsGrid() {
                 src={cat.image}
                 alt={cat.name}
                 fill
-                className="object-cover"
+                className="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw object-cover"
               />
             </div>
             <p className="mt-2 text-gray-700 font-medium group-hover:text-[#5A3E85] transition">
