@@ -75,11 +75,11 @@ export default function OfferPopup() {
         </div>
 
         {/* Submit Button (Navigates to Hero Section) */}
-        <a href="#hero">
-          <button className="bg-[#5A3E85] text-white px-6 py-2 rounded-lg hover:bg-[#452c68] transition">
+          <button 
+           onClick={handleSendToWhatsApp}
+          className="bg-[#5A3E85] text-white px-6 py-2 rounded-lg hover:bg-[#452c68] transition">
             Submit
           </button>
-        </a>
       </div>
     </div>
   );
